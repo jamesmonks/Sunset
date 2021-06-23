@@ -9,12 +9,25 @@
     box-shadow: 0 0 0 #000;
     transform: translate3d(0,0,0);
     transition: 600ms;
+    text-align: center;
 }
 
 body {
     position: relative;
     background-color: #333;
     height: 100vh;
+}
+
+#about-this-btn {
+    position: absolute;
+    z-index: 4;
+    left: 10px;
+    top: 10px;
+}
+
+.modal-dialog.modal-sm {
+    top: 50% !important;
+    transform: translateY(-60%) !important;
 }
 
 div.dark-option {
@@ -26,7 +39,7 @@ div.dark-option {
     border-radius: 22px;
     background-color: gray;
     border: 2px solid lightgrey;
-    z-index: 9000;
+    z-index: 9;
 }
 
 div.dark-option > div.option-ball {
