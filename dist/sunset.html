@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    
+            <!-- <script src="./js/live.js"></script> -->
+    
+            <!-- jQuery -->
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js" 
+            integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+        
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+            integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+        
+            <!-- Bootstrap -->
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" 
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" 
+            integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+        
+            <!--Google Font -->
+            <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+        
+            <!-- <link rel="stylesheet" href="css/menu_test.css"> -->
+            <script src="./js/sunset.js"></script>
+            <script src="./js/perlin.js"></script>
+            <link rel="stylesheet" href="./css/sunset.css">
+    </head>
+    <!-- <body class=""> -->
+        <body class="light-mode">
+    
+        <nav class="header-nav">
+
+        </nav>
+        <!-- Depending on width of screen, this will either be a hamburger with a floating sub-menu type on larger displays or
+        on smaller displays, the menu will take up the entire width of the screen.
+        A feature of the hamburger icon is that it will rotate 45degrees on click and turn into a cross to allow the user to X
+        out. -->
+        <nav class="side-nav">
+            <div class="expand-menu-btn offstage">
+                <div class="expand-menu-btn-bg">
+                    <div class="expand-menu-btn-cross"></div>
+                </div>
+            </div>
+            <div class="side-menu">
+                <div class="side-menu-items-container">
+                    <div class="side-menu-title"><h4>MENU</h4></div>
+                    <div class="menu-item">About Me</div>
+                    <div class="menu-item">Resume</div>
+                    <div class="menu-item">Projects</div>
+                    <div class="menu-item">Contact</div>
+                </div>
+            </div>
+        </nav>
+        <div class="sky-overlay">
+            <canvas id="perlin2">
+            </canvas>
+        </div>
+        <div class="sky"></div>
+        <div class="water-overlay">
+            <canvas id="perlin3">
+            </canvas>
+        </div>
+        <div class="water"></div>
+        <div id="halo-container">
+            <div id="halo-elem">
+                <div class="ring ring1"><div id="ring1" class="ring-child"></div></div>
+                <div class="ring ring2"><div id="ring2" class="ring-child"></div></div>
+                <div class="ring ring3"><div id="ring3" class="ring-child"></div></div>
+                <div class="ring ring4"><div id="ring4" class="ring-child"></div></div>
+                <div class="ring ring5"><div id="ring5" class="ring-child"></div></div>
+                <div class="ring ring6"><div id="ring6" class="ring-child"></div></div>
+                <div class="ring ring7"><div id="ring7" class="ring-child"></div></div>
+                <div class="ring ring8"><div id="ring8" class="ring-child"></div></div>
+                <div class="cover-ring"></div>
+            </div>
+        </div>
+        <div id="halo-container2">
+            <div id="halo-elem2">
+                <div class="ring ring1"><div id="ring1" class="ring-child"></div></div>
+                <div class="ring ring2"><div id="ring2" class="ring-child"></div></div>
+                <div class="ring ring3"><div id="ring3" class="ring-child"></div></div>
+                <div class="ring ring4"><div id="ring4" class="ring-child"></div></div>
+                <div class="ring ring5"><div id="ring5" class="ring-child"></div></div>
+                <div class="ring ring6"><div id="ring6" class="ring-child"></div></div>
+                <div class="ring ring7"><div id="ring7" class="ring-child"></div></div>
+                <div class="ring ring8"><div id="ring8" class="ring-child"></div></div>
+                <div class="cover-ring">
+                    <div class="eclipse-ring"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

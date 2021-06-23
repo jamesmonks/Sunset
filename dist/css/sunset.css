@@ -1,0 +1,319 @@
+:root {
+    --skew-angle: 8deg;
+    --minus-skew: -8deg;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-shadow: 0 0 0 #000;
+    transform: translate3d(0,0,0);
+}
+
+body {
+    position: relative;
+    background-color: #333;
+    height: 100vh;
+}
+
+body.light-mode {
+    background-color: #fff !important;
+}
+
+.sky {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(10deg, #58c0d5, #eef392, #ff3d17, #36395a, #010208);
+    background-size: 1000% 1000%;
+    -moz-animation: skyfall 20s ease infinite;
+    animation: skyfall 20s ease infinite;
+}
+
+.sky-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    z-index: 3;
+    opacity: .2;
+    overflow: hidden;
+}
+
+.sky-overlay > canvas {
+    width: 100%;
+    height: 100%;
+}
+
+@-moz-keyframes skyfall {
+    0%      { background-position:50% 0%   }
+    50%     { background-position:50% 100% }
+    100%    { background-position:50% 0%   }
+}
+
+@keyframes skyfall {
+    0%      { background-position:50% 0%   }
+    50%     { background-position:50% 100% }
+    100%    { background-position:50% 0%   }
+}
+
+.water {
+    position: absolute;
+    top: 49.9%;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(180deg, #000 5%, #05215f, #0a6673, #73df93, #0a6673);
+    background-size: 300% 300%;
+    height: 50.1%;
+    -webkit-animation: waterflow 20s ease infinite;
+    animation: waterflow 20s ease infinite;
+}
+
+.water-overlay {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    background-size: 300% 300%;
+    height: 50%;
+    z-index: 3;
+    opacity: .2;
+    overflow: hidden;
+}
+
+.water-overlay > canvas {
+    width: 100%;
+}
+
+@-moz-keyframes waterflow {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
+}
+
+@keyframes waterflow {
+    0%{background-position:50% 0%}
+    50%{background-position:50% 100%}
+    100%{background-position:50% 0%}
+}
+
+div#halo-container,
+div#halo-container2 {
+    /* background-color: #fff6; */
+    width: 300px;
+    height: 200px;
+    left: 50%;
+    top: 50%;
+    position: absolute;
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-50%);
+    z-index: 3;
+    overflow-y: hidden;
+}
+
+div#halo-container {
+    transform: translateX(-50%) translateY(-100%);
+}
+
+div#halo-container2 {
+    mix-blend-mode: soft-light;
+}
+
+
+div#halo-elem,
+div#halo-elem2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transition: 1000ms ease-in-out;
+    z-index: 3;
+}
+
+div#halo-elem {
+    bottom: 15%;
+    /* z-index: 3; */
+}
+
+div#halo-elem2 {
+    left: 50%;
+    top: 60%;
+    transform: translateX(-50%) translateY(-110%) scale(0.85, -.5);
+    opacity: .5;
+    /* z-index: 1; */
+}
+
+div#halo-container:hover div#halo-elem {
+    transform: scale(1.5);
+    transition: 500ms ease-in-out;
+}
+
+div#halo-container:hover + div#halo-container2 div#halo-elem2 {
+    transform: translateX(-50%) translateY(-130%) scale(1.275, -.75);
+    transition: 500ms ease-in-out;
+    opacity: .25;
+}
+
+body div.ring {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgb(255, 230, 148);
+    z-index: -1;
+    -moz-animation: rotate-animation 0s cubic-bezier(.5, .3, .5, .7) 1s;
+    animation: rotate-animation 0s cubic-bezier(.5, .3, .5, .7) 1s;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -moz-animation-direction: normal;
+    animation-direction: normal;
+}
+
+.cover-ring {
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff8, inset 0 0 6px #fff8;
+    overflow: hidden;
+}
+
+body.light-mode .cover-ring {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 13px #0005, inset 0 0 8px #000a;
+}
+
+.eclipse-ring,
+body.light-mode .eclipse-ring {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: translateX(-200%);
+    /* -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite; */
+    -moz-animation: eclipse-animation 10s linear infinite;
+    animation: eclipse-animation 10s linear infinite;
+}
+
+.eclipse-ring {
+    background-color: white;
+}
+
+body.light-mode .eclipse-ring {
+    background-color: black;
+}
+
+@keyframes eclipse-animation {
+    0%      {   transform: translateX(-200%) translateY(-50%); }
+    24.9%   {   transform: translateX( 200%) translateY( 50%); }
+    25%     {   transform: translateX(   0%) translateY(150%); }
+    25.1%   {   transform: translateX(-200%) translateY(-16%); }
+    49.9%   {   transform: translateX( 200%) translateY( 16%); }
+    50%     {   transform: translateX(   0%) translateY(150%); }
+    50.1%   {   transform: translateX(-200%) translateY( 16%); }
+    74.9%   {   transform: translateX( 200%) translateY(-16%); }
+    75%     {   transform: translateX(   0%) translateY(150%); }
+    75.1%   {   transform: translateX(-200%) translateY( 50%); }
+    100%    {   transform: translateX( 200%) translateY(-50%); }
+}
+
+@-moz-keyframes eclipse-animation {
+    0%      {   transform: translateX(-200%) translateY(-50%); }
+    24.9%   {   transform: translateX( 200%) translateY( 50%); }
+    25%     {   transform: translateX(   0%) translateY(150%)}
+    25.1%   {   transform: translateX(-200%) translateY(-16%); }
+    49.9%   {   transform: translateX( 200%) translateY( 16%); }
+    50%     {   transform: translateX(   0%) translateY(150%)}
+    50.1%   {   transform: translateX(-200%) translateY( 16%); }
+    74.9%   {   transform: translateX( 200%) translateY(-16%); }
+    75%     {   transform: translateX(   0%) translateY(150%)}
+    75.1%   {   transform: translateX(-200%) translateY( 50%); }
+    100%    {   transform: translateX( 200%) translateY(-50%); }
+}
+
+body.light-mode div.ring {
+    background-color: rgb(0, 25, 80);
+}
+
+body #halo-elem2 div.ring {
+    /* transform: scaleY(-1); */
+    /* animation-direction: reverse;
+    -moz-animation-direction: reverse; */
+}
+
+div.ring.ring1 { animation-duration: 1200ms;}
+div.ring.ring2 { animation-duration: 1500ms;}
+div.ring.ring3 { animation-duration: 1800ms;}
+div.ring.ring4 { animation-duration: 2100ms;}
+div.ring.ring5 { animation-duration: 2400ms;}
+div.ring.ring6 { animation-duration: 2700ms;}
+div.ring.ring7 { animation-duration: 3000ms;}
+div.ring.ring8 { animation-duration: 3200ms;}
+
+div.ring-child {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(247, 255, 139, 0.227);
+    box-shadow: 0 0 10px #fff8;
+}
+
+body.light-mode div.ring-child {
+    background-color: rgba(16, 14, 49, 0.227);
+    box-shadow: 0 0 10px #0008;
+}
+
+div#ring1.ring-child,
+div#ring3.ring-child
+{
+    background-color: rgba(255, 139, 139, 0.227);
+}
+
+div#ring2.ring-child,
+div#ring4.ring-child
+{
+    background-color: rgba(255, 224, 139, 0.227);
+}
+
+
+body.light-mode div#ring1.ring-child,
+body.light-mode div#ring3.ring-child
+{
+    background-color: rgba(0, 117, 117, 0.227);
+}
+
+body.light-mode div#ring2.ring-child,
+body.light-mode div#ring4.ring-child
+{
+    background-color: rgba(0, 31, 117, 0.227);
+}
+
+div#ring1 { transform: rotate(0deg) skew(0deg, -15deg); }
+div#ring2 { transform: rotate(45deg) skew(0deg, -15deg); }
+div#ring3 { transform: rotate(90deg) skew(0deg, -15deg); }
+div#ring4 { transform: rotate(135deg) skew(0deg, -15deg); }
+div#ring5 { transform: rotate(180deg) skew(0deg, -15deg); }
+div#ring6 { transform: rotate(225deg) skew(0deg, -15deg); }
+div#ring7 { transform: rotate(270deg) skew(0deg, -15deg); }
+div#ring8 { transform: rotate(315deg) skew(0deg, -15deg); }
+
+/* Spiky scale but uniform rotation */
+@keyframes rotate-animation {
+    0%  { transform: rotate(0deg)   scale(1.0);   }
+    10% { transform: rotate(36deg)  scale(.95);  }
+    50% { transform: rotate(180deg) scale(.9);  }
+    90% { transform: rotate(324deg) scale(.95); }
+    100%{ transform: rotate(360deg) scale(1.0); }
+}
