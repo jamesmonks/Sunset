@@ -15,6 +15,21 @@ function init()
         console.log(event.currentTarget);
         $(event.currentTarget).toggleClass("menu-active");
     });
+
+    $("div.dark-option").on("click", event => {
+        $(event.currentTarget).toggleClass("dark-sun");
+        if ($(event.currentTarget).hasClass("dark-sun"))
+        {
+            $("body").removeClass("light-mode");
+            $(".option-label").html("LIGHT MODE");
+        }
+        else
+        {
+            $("body").addClass("light-mode");
+            $(".option-label").html("DARK MODE");
+        }
+    });
+
     window.addEventListener("scroll", side_menu_display);
 }
 
