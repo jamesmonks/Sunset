@@ -21,8 +21,9 @@ body {
 #about-this-btn {
     position: absolute;
     z-index: 4;
-    left: 10px;
-    top: 10px;
+    left: 50px;
+    top: 40px;
+    border-radius: 22px;
 }
 
 .modal-dialog.modal-sm {
@@ -32,7 +33,7 @@ body {
 
 div.dark-option {
     position: fixed;
-    right: 80px;
+    right: 50px;
     top: 40px;
     width: 100px;
     height: 44px;
