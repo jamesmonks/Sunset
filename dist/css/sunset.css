@@ -47,8 +47,8 @@ div.dark-option > div.option-ball {
     position: relative;
     width: 40px;
     height: 40px;
-    left: 0px;
-    top: 0px;
+    left: 0;
+    top: 0;
     border-radius: 20px;
     background-color: white;
     transition: 300ms;
@@ -64,8 +64,8 @@ div.dark-option > div.option-label {
     position: absolute;
     width: 100px;
     top: 45px;
-    left: 0px;
-    text-shadow: 0px 0px 3px #fff;
+    left: 0;
+    text-shadow: 0 0 3px #fff;
     text-align: center;
     font-size: 1.25rem;
     font-weight: 900;
@@ -76,7 +76,7 @@ div.dark-option > div.option-label {
 
 div.dark-option.dark-sun > div.option-label {
     color: white;
-    text-shadow: 0px 0px 3px #000;
+    text-shadow: 0 0 3px #000;
 }
 
 body.light-mode {
@@ -171,7 +171,6 @@ div#halo-container2 {
     left: 50%;
     top: 50%;
     position: absolute;
-    top: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -308,11 +307,11 @@ body.light-mode div.ring {
     background-color: rgb(0, 25, 80);
 }
 
-body #halo-elem2 div.ring {
-    /* transform: scaleY(-1); */
-    /* animation-direction: reverse;
-    -moz-animation-direction: reverse; */
-}
+/* body #halo-elem2 div.ring {
+    transform: scaleY(-1);
+    animation-direction: reverse;
+    -moz-animation-direction: reverse;
+} */
 
 div.ring.ring1 { animation-duration: 1200ms;}
 div.ring.ring2 { animation-duration: 1500ms;}
